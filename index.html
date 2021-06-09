@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  </head>
+  <body>
+    <container>
+      <div>
+        <div id="top">
+          <h1>Welcome to the Demo</h1>
+          <p>let's dive into some JavaScript examples.</p>
+        </div>
+        <div id="example1">
+          <h2>Example 1: Using a Button to Understand Event Handling</h2>
+          <h3>Change the example text below by pressing the "Try it" button.</h3>
+          <p id="demo">My Paragraph.</p>
+          <button onclick="changeText()">Try it</button><br><br>
+          <div id="explanation">
+            <div id="explanationText">
+              <p><b>How it works:</b><br><br>
+                In HTML file, we create the paragraph to change, and give it an ID to reference in our JavaScript file.
+                It should look like this:<br><br>
+                "&lt;p id="demo"&gt; My Paragraph. &lt;/p&gt;"
+                <br><br> The next line of code will be declaring a button, which we will assign our JavaScript "OnClick"
+                event handler to. Let's name the function assigned to the onclick "changeText()".
+                <br><br>"&lt;button onclick="changeText()"&gt;Try it&lt;/button&gt;
+                <br><br> <i>Make sure you have your Javascript file imported at the bottom of your HTML page because we
+                  will be working in that!</i>
+                <br><br>
+                In your separate JS file, we will create the function that changes the text.
+                <br><br>
+                "const changeText = () => {<br>
+                const p = document.getElementById("demo");<br>
+                <br>
+                p.textContent = "I changed because of an event handler property.";<br>
+                }<br>
+                const button = document.querySelector('button');<br>
+                button.onclick = changeText;"<br>
+                <br>
+                This function is assigning the constant "changeText" to an arrow function, which locates the demo
+                paragraph in the HTML document, and writes over the content. Then we create a constant button that is
+                set equal to the button located in the HTML document, and when the onclick function is called on the
+                button, changeText will occur onclick.
+                <br><br>
+                <b>For more info: <u>https://www.digitalocean.com/community/tutorials/understanding-events-in-javascript
+                  </u></b>
+              </p>
+            </div>
+          </div>
+          <div id="example1">
+            <h2>Example 2: What's the Deal with Arrow Functions?</h2>
+            <h3>Differences between normal functions and Arrow Functions:</h3>
+            <p>
+            <div id="list">
+              <ul>
+                <li>Arrow functions are<i>Anonymous!</i>They do not need to be named.</li>
+                <li>They don't need a prototype or a constructor</li>
+                <li>They define "this" through lexical scope</li>
+              </ul>
+            </div>
+            </p>
+            <h4>Arrow Function in Action</h4>
+            <h5>Type a number below to be squared.</h5>
+            <input type="number" id="input">
+            <p>Click the button to execute the squaring arrow funtion.</p>
+            <button id="btn">Enter Input Number, then Click Me!</button>
+            <p id="demo2"></p>
+            <script>
+              var sqrNum;
+              sqrNum = () =>
+                document.getElementById("demo2").innerHTML =
+                document.getElementById("input").value * document.getElementById("input").value;
+              //The window object calls the function:
+              window.addEventListener("load", sqrNum);
+              //A button object calls the function:
+              document.getElementById("btn").addEventListener("click", sqrNum);
+            </script>
+            <br>
+            <div id="explanation">
+              <div id="explanationText">
+                <p><b>How it works:</b><br><br>
+                  In the HTML file we create an input, which we assign the id "input". We also create a button that will
+                  execute the future arrow function onclick.
+                  <br><br>
+                  Then we write the logic for the arrow function.
+                  <br><br>
+                  var sqrNum;
+                  <br>sqrNum = () => <br>
+                  document.getElementById("demo2").innerHTML = <br>
+                  document.getElementById("input").value *document.getElementById("input").value;
+                  <br><br>
+                  Note that the function doesn't have a name, rather it is assigned to a value, "sqrNum". <br>The arrow
+                  function also does not have a return type or value! <br>There is no need for curly braces here, but if
+                  you wanted to use "this", you would need braces to define what "this" you are referring to.<br><br>
+                  First we are grabbing the "demo" paragraph ID so our result will have a place to be displayed.<br><br>
+                  Then we are setting "demo" equal to the input multiplied by itself.<br><br>
+                  Behind the scenes, we also have an onclick event listener for the button.<br>
+                  <b>For more info:
+                    <u>https://www.digitalocean.com/community/tutorials/understanding-arrow-functions-in-javascript
+                    </u></b>
+                </p>
+              </div>
+            </div>
+
+            <div id="example1"></div>
+            <h2>Example 3: Loops in Javascript</h2>
+            <h3>For Loop</h3>
+            <h5>Open your console, the examples will show there.</h5>
+            <p"> for (let i = 0; i < 5; i++) { <br>
+              console.log(i);
+          }</p>
+              <p id=></p>
+              <button onclick="displayForLoop()">Display For Loop in Console</button><br><br>
+              <div id="explanation">
+                <div id="explanationText">
+                  <p><b>How it works:</b><br><br>
+                    In the JS file, we will create a simple for loop to count to five.<br><br>
+                    for (let i = 0; i < 5; i++) { <br>
+                      console.log(i);<br><br>
+                      We set placeholder variable "i" equal to zero, then add our condition- as long as "i" < 5, increment "i++" variable "i".<br><br>
+                      I've named this function "displayForLoop()", and have it set to my button to log in the console when pressed.<br><br>
+                      For Loops in JavaScript are identical to For Loops in Java.<br><br>
+                    <b>For more info:
+                      <u>https://www.digitalocean.com/community/tutorials/for-loops-for-of-loops-and-for-in-loops-in-javascript</u></b>
+                  </p>
+                </div>
+              </div>
+            <div id="example1">
+              <h3>For... of Loop</h3>
+              <h5>Open your console, the examples will show there.</h5>
+              <p"> for (let saladIngredient of saladIngredients) {<br>
+                console.log(saladIngredient);
+                }</p>
+                <p id="salad"></p>
+                <button onclick="displayList()">Display Ingredients in Console</button><br><br>
+                <div id="explanation">
+                  <div id="explanationText">
+                    <p><b>How it works:</b><br><br>
+                      In the JS file, we will create an array to loop through.<br><br>
+                      let saladIngredients = ["lettuce", "baby spinach", "red onion", "tomatoes", "grilled chicken",
+                      "shredded cheese"];<br><br>
+                      We then write the for loop:<br><br>
+                      for (let saladIngredient of saladIngredients) {<br>
+                      console.log(saladIngredient);<br><br>
+                      For each saladIngredient of String list saladIngredients, log each indiviual ingredient to the console.<br><br>
+                      <b>For more info:
+                        <u>https://www.digitalocean.com/community/tutorials/for-loops-for-of-loops-and-for-in-loops-in-javascript</u></b>
+                    </p>
+                  </div>
+                </div>
+                <div id="example1">
+                  <h3>For... in Loop</h3>
+                  <h5>Open your console, the examples will show there.</h5>
+                  <p"> for (attribute in flower) {<br>
+                    console.log(`${attribute}`.toUpperCase() + `: ${flower[attribute]}`);<br>
+                    }<br>
+                  </p>
+                    <p id="salad"></p>
+                    <button onclick="displayInLoop()">Display For In Loop in Console</button><br><br>
+                    <div id="explanation">
+                      <div id="explanationText">
+                        <p><b>How it works:</b><br><br>
+                          In the JS file, we will create an object with attributes.<br><br>
+                          const flower = {<br>
+                            species: "hibiscus",<br>
+                            color: "yellow",<br>
+                            numberOfPetals: 5,<br>
+                            stateFlower: "Hawaii"<br>
+                          }<br><br>
+                          We then write the For In loop:<br><br>
+                          for (attribute in flower) {<br>
+                            console.log(`${attribute}`.toUpperCase() + `: ${flower[attribute]}`);<br>
+                          }<br><br>
+                          For each attribute our flower object has, we are logging them to the console.<br><br>
+                          We have given this code special formatting using .toUpperCase.<br><br>
+                          <b>For more info:
+                            <u>https://www.digitalocean.com/community/tutorials/for-loops-for-of-loops-and-for-in-loops-in-javascript</u></b>
+                        </p>
+                      </div>
+                    </div>
+                <div id="example1">
+                  <h2>Example 4: Callbacks! A Lesson in The Event Loop</h2>
+                  <h5>Open your console, the examples will show there.</h5>
+                  <p>We have three functions, that each call the numbers 1, 2, and 3. <br>I call them in this order: first(), second(third()), third(). Why does "2" print last?</p>
+                  <button onclick="callBackExample()">Try it</button><br><br>
+                  <div id="explanation">
+                    <div id="explanationText">
+                      <p><b>How it works:</b><br><br>
+                        First you need to understand the Stack. The stack holds the code that is currently running. Like a stack of pancakes, think of the stack as executing in "Last in, First Out" order. This means you can add or remove items on the stack only from the very end.<br>
+                        <br>
+                        Callbacks are not asynchronous by nature, but they can be used to create asynchronous code.<br>
+                        Callbacks are simply functions that have been passed as the argument to another function. No special code!<br><br>
+                        function first() {<br>
+                          console.log(1)<br>
+                        }<br><br>
+                        function second(callback) {<br>
+                          setTimeout(() => {<br>
+                            console.log(2);<br>
+                            // Execute the callback function, but it needs to be optional!<br>
+                            if (callback) {<br>
+                              callback();<br>
+                          }<br>
+                          }, 0)<br>
+                        }<br><br>
+                        function third() {<br>
+                        console.log(3)<br>
+                        }<br>
+                        In first(), everything is straightforward- console.log the value 1. No funny business here.<br>
+                        In second(), we set it's argument as callback. This is what makes it a callback function. <br>
+                        Then the setTimeout() function runs. It's parameters include an arrow function, and the timer which is set to zero. We set the timer to zero because if the timer wasn't set, the anonymous arrow function would get added to the stack immediately, interrupting other functions currently happening. That has unintended and unpredictable effects. The timer can be set to whatever you want!<br>
+                        <br>In the arrow function, 2 will be logged to the console if there is a callback. We have to check for the callback with an if statement or else it does not run.<br><br>
+                        In third(), we are simply logging 3 to the console.<br><br>
+                        When you press the button above, the functions are being called in this order:<br><br>
+                        first();<br>
+                        second(third());<br>
+                        third();<br>
+                        And what is displayed is:<br><br>
+                        1<br>
+                        3<br>
+                        3<br>
+                        2<br><br>
+                        Why is two getting called last when it is the second function we listed?<br>
+                        It's because of the callback! In second(), 3 is logged before two because the callback is present. The first 3 logs, and during the timer, the second 3 logs. Then 2 is logged at the end.<br><br>
+                        Callbacks are a great example of how to turn sychronous code asynchronous!<br><br>
+                        <b>For more info:
+                          <u>https://www.digitalocean.com/community/tutorials/understanding-the-event-loop-callbacks-promises-and-async-await-in-javascript
+                          </u></b>
+                      </p>
+                    </div>
+                  </div>
+                  <div id="example1">
+                    <h2>Example 5: Array Destructuring</h2>
+                    <h3>How to make New Data from an Existing Array!</h3>
+                    <p id=>How do I make these three strings go from elements in this array...<br>
+                      const date = ['1970', '12', '01']<br>
+                    ... to a separated-by-element date?</p>
+                    <!-- <button onclick="changeText()">Try it</button><br><br> -->
+                    <div id="explanation">
+                      <div id="explanationText">
+                        <p><b>How it works:</b><br><br>
+                          First, we will declare our date array in our JavaScript file:
+                          const date = ['1970', '12', '01']<br><br>
+                          Then, using the index of each element, we will reassign the elements of date to new variables!<br>
+                          const year = date[0]<br>
+                          const month = date[1]<br>
+                          const day = date[2]<br><br>
+                          Remember our cute little "donut picker upper"? [ ] <br>
+                          Unfortunately, doing this by hand is tedious and takes up a lot of memory, so there's a better way of doing it called Destructuring.<br>
+                          DESTRUCTURED:<br>
+                          const [year, month, day] = date<br><br>
+                          Then, log the new variables:<br>
+                          console.log(month)<br>
+                          console.log(year)<br>
+                          console.log(day)<br><br>
+                          <button onclick="destructuredArray()">Open Console and Check it Out!</button><br><br>
+                          And you have yourself a cute lil destructured array. <br><br>
+                          <b>For more info:
+                            <u>https://www.digitalocean.com/community/tutorials/understanding-destructuring-rest-parameters-and-spread-syntax-in-javascript
+                            </u></b>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </container>
+  </body>
+  <script src="script.js"></script>
+</body>
+</html>
